@@ -83,11 +83,6 @@ DATABASES = {
 }
 
 
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
 
 
 # Password validation
@@ -142,6 +137,13 @@ MEDIA_URL = '/media/'
 
 # The absolute filesystem path to the directory that will hold user-uploaded files
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
