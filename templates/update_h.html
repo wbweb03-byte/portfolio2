@@ -1,0 +1,367 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>FFF FOR FUTURES</title>
+     <link rel="icon" href="Our _Web_Logo.png">
+     
+</head>
+    <body class="min-h-screen md:bg-[url({% static "src/website_bg_logo.png"%})] bg-cover bg-center overflow-x-hidden">
+
+    <!-- Contact Button -->
+    <button class="flex items-center gap-2 fixed bottom-[88px] right-32 md:bottom-10 md:right-10 bg-lime-600 hover:bg-lime-500 text-slate-200 hover:text-white px-3 py-2 rounded-xl text-sm md:text-lg shadow-lg z-50">
+        <img class="h-6 w-6 md:h-10 md:w-10" src="calling.png" alt="">
+        <p>Contact Us</p>
+    </button>
+
+    <!-- Header -->
+    <header>
+
+    <nav class="flex items-center justify-between h-20 md:h-24 w-full bg-black/90 px-1 md:px-10">
+
+        <!-- Logo -->
+        <img class="h-14 md:h-20 w-auto" src="{% static "src/website_bg_logo.png"%}" alt="bal">
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 lg:gap-16">
+            <a class="text-orange-500 font-serif font-medium hover:underline underline-offset-4" href="#">HOME</a>
+
+            <a class="text-slate-50 font-serif font-medium hover:underline underline-offset-4" href="abaut_Us.html">ABOUT US</a>
+
+            <a class="text-slate-50 font-serif font-medium hover:underline underline-offset-4" href="#">SERVICES</a>
+
+            <a class="text-slate-50 font-serif font-medium hover:underline underline-offset-4" href="#">PROJECTS</a>
+
+            <a class="text-slate-50 font-serif font-medium hover:underline underline-offset-4" href="contact.html">CONTACT</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1">
+
+            <span class="w-7 h-1 bg-white rounded"></span>
+
+            <span class="w-7 h-1 bg-white rounded"></span>
+
+            <span class="w-7 h-1 bg-white rounded"></span>
+
+        </button>
+
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="hidden md:hidden flex flex-col items-end  mr-4 gap-6 py-6  text-white">
+       
+        
+            <a class="text-green-500 mr-5 font-serif font-medium hover:underline underline-offset-4"
+            href="#">
+            HOME
+        </a>
+
+        <a class="font-serif font-medium text-blue-700 hover:underline underline-offset-4"
+            href="abaut_Us.html">
+            ABOUT US
+        </a>
+
+        <a class="font-serif mr-1 text-blue-700 font-medium hover:underline underline-offset-4"
+            href="#">
+            SERVICES
+        </a>
+
+        <a class="font-serif font-medium text-blue-700 hover:underline underline-offset-4"
+            href="#">
+            PROJECTS
+        </a>
+
+        <a class="font-serif text-blue-700 mr-1 font-medium hover:underline underline-offset-4"
+            href="contact.html">
+            CONTACT
+        </a>
+        
+
+    </div>
+
+</header>
+
+<!-- JavaScript -->
+<script>
+
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+
+</script>
+
+    <!-- Hero Section -->
+    <div class="flex flex-col-reverse md:flex-row items-center justify-center px-4 md:px-10 py-10 gap-10">
+
+        <!-- Left -->
+        <div class="w-full md:w-1/2 text-center md:text-left">
+
+            <span class="text-3xl md:text-5xl text-slate-800 md:text-gray-100 font-extrabold font-serif">
+                INNOVATION IN MIND,
+            </span>
+
+            <br>
+
+            <span class="text-3xl md:text-5xl text-orange-500 font-extrabold font-serif">
+                PERFECTION IN CODE
+            </span>
+
+            <p class="mt-5 text-sm md:text-base text-slate-700 md:text-gray-100 max-w-xl mx-auto md:mx-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ratione rerum placeat est dolor pariatur!
+            </p>
+
+            <div class="mt-6 inline-block hover:border rounded-md border-orange-500 px-4 py-2">
+                <a class="text-orange-800 md:text-orange-600 text-sm md:text-base" href="#">
+                    EXPLORE OUR SERVICES →
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Right -->
+        <div class="w-full md:w-1/2 flex justify-center">
+            <img class="w-72 md:w-full max-w-lg" src="{% static "src/OUR_WEB_LOGO.png"%}" alt="#">
+        </div>
+
+    </div>
+
+    <!-- Team Section -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-black/60 py-8 px-4 md:px-10">
+
+        <!-- Card -->
+        <div class="flex flex-col items-center text-center p-4">
+
+            <p class="text-2xl text-slate-100 font-semibold font-serif">
+                CEO
+            </p>
+
+            <img class="mt-4 h-28 w-28 md:h-32 md:w-32 rounded-full"
+                src="{% static 'src/ChatGPT_Image.png' %}" alt="#">
+
+            <h1 class="mt-4 text-xl md:text-2xl font-semibold text-orange-500">
+                Zayan Arif
+            </h1>
+
+            <h3 class="mt-2 text-sm text-gray-300">
+                Digital Growth Architect & Web Developer
+            </h3>
+
+        </div>
+
+        <!-- Card -->
+        <div class="flex flex-col items-center text-center p-4">
+
+            <p class="text-2xl text-slate-100 font-semibold font-serif">
+                DESIGNER & CO-FOUNDER
+            </p>
+
+            <img class="mt-4 h-28 w-28 md:h-32 md:w-32 rounded-full"
+                src="{% static 'src/ruhan-fardin.png'%}" alt="#">
+
+            <h1 class="mt-4 text-xl md:text-2xl font-semibold text-orange-500">
+                Ruhan Fardin
+            </h1>
+
+            <h3 class="mt-2 text-sm text-gray-300">
+                Professional Visual Designer
+            </h3>
+
+        </div>
+
+        <!-- Empty Card -->
+        <div class="flex flex-col items-center text-center p-4">
+
+            <p class="text-2xl text-gray-300 font-semibold font-serif">
+                Add...
+            </p>
+
+            <div class="mt-4 h-28 w-28 md:h-32 md:w-32 rounded-full bg-slate-400"></div>
+
+            <h1 class="mt-4 text-xl md:text-2xl font-semibold text-orange-400">
+                ######
+            </h1>
+
+        </div>
+
+        <!-- Empty Card -->
+        <div class="flex flex-col items-center text-center p-4">
+
+            <p class="text-2xl text-gray-300 font-semibold font-serif">
+                Add...
+            </p>
+
+            <div class="mt-4 h-28 w-28 md:h-32 md:w-32 rounded-full bg-slate-400"></div>
+
+            <h1 class="mt-4 text-xl md:text-2xl font-semibold text-orange-400">
+                ######
+            </h1>
+
+        </div>
+
+    </div>
+
+    <!-- Services -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 px-4 md:px-10 py-10">
+
+        <!-- Card -->
+        <a class="bg-black/60 backdrop-blur-sm shadow-2xl shadow-orange-500/30 rounded-2xl p-4 hover:shadow-orange-600/40 transition duration-300"
+            href="{%  url 'students_views'%}">
+
+            <div class="flex justify-center">
+                <img class="rounded-full h-28 w-28 md:h-36 md:w-36 hover:scale-95 transition duration-200"
+                    src="{% static 'src/vintage.png'%}" alt="">
+            </div>
+
+            <p class="text-center text-2xl md:text-3xl text-orange-500 mt-4 font-semibold">
+                @Vintage
+            </p>
+
+            <h3 class="text-sm text-yellow-50 text-center mt-3">
+                ipsum dolor sit amet consectetur adipisicing elit.
+            </h3>
+
+            <div class="mt-5 text-center">
+                <span class="text-lg md:text-2xl text-green-400 hover:underline underline-offset-4">
+                    Check Out ~
+                </span>
+            </div>
+
+        </a>
+        <!-- secend card -->
+         <a class="bg-black/60 backdrop-blur-sm shadow-2xl shadow-orange-500/30 rounded-2xl p-4 hover:shadow-orange-600/40 transition duration-300"
+            href="#">
+
+            <div class="flex justify-center">
+                <img class="rounded-full h-28 w-28 md:h-36 md:w-36 hover:scale-95 transition duration-200"
+                    src="{% static 'src/e-commers.png'%}" alt="">
+            </div>
+
+            <p class="text-center text-2xl md:text-3xl text-orange-500 mt-4 font-semibold">
+                @E-COMMERS
+            </p>
+
+            <h3 class="text-sm text-yellow-50 text-center mt-3">
+                ipsum dolor,ipsa dolore amet... voluptatem voluptates... snecessitatibus.
+            </h3>
+
+            <div class="mt-5 text-center">
+                <span class="text-lg md:text-2xl text-green-400 hover:underline underline-offset-4">
+                    Check Out ~
+                </span>
+            </div>
+
+        </a>
+            <!-- 3rd card -->
+        <a class="bg-black/60 backdrop-blur-sm shadow-2xl shadow-orange-500/30 rounded-2xl p-4 hover:shadow-orange-600/40 transition duration-300"
+            href="#">
+
+            <div class="flex justify-center">
+                <img class="rounded-full h-28 w-28 md:h-36 md:w-36 hover:scale-95 transition duration-200"
+                    src="mock-test.png" alt="">
+            </div>
+
+            <p class="text-center text-2xl md:text-3xl text-orange-500 mt-4 font-semibold">
+                @MOCK TEST
+            </p>
+
+            <h3 class="text-sm text-yellow-50 text-center mt-3">
+                ipsum dolor,ipsa dolore amet... voluptatem voluptates... snecessitatibus.
+            </h3>
+
+            <div class="mt-5 text-center">
+                <span class="text-lg md:text-2xl text-green-400 hover:underline underline-offset-4">
+                    Check Out ~
+                </span>
+            </div>
+
+        </a>
+            <!-- 4th  card -->
+        <a class="bg-black/60 backdrop-blur-sm shadow-2xl shadow-orange-500/30 rounded-2xl p-4 hover:shadow-orange-600/40 transition duration-300"
+            href="#">
+
+            <div class="flex justify-center">
+                <img class="rounded-full h-28 w-28 md:h-36 md:w-36 hover:scale-95 transition duration-200"
+                    src="quiz _center.png" alt="">
+            </div>
+
+            <p class="text-center text-2xl md:text-3xl text-orange-500 mt-4 font-semibold">
+                @QUIZ CENTER
+            </p>
+
+            <h3 class="text-sm text-yellow-50 text-center mt-3">
+                ipsum dolor,ipsa dolore amet... voluptatem voluptates... snecessitatibus.
+            </h3>
+
+            <div class="mt-5 text-center">
+                <span class="text-lg md:text-2xl text-green-400 hover:underline underline-offset-4">
+                    Check Out ~
+                </span>
+            </div>
+
+        </a>
+            <!-- 5th card -->
+        <a class="bg-black/60 backdrop-blur-sm shadow-2xl shadow-orange-500/30 rounded-2xl p-4 hover:shadow-orange-600/40 transition duration-300"
+            href="#">
+
+            <div class="flex justify-center">
+                <img class="rounded-full h-28 w-28 md:h-36 md:w-36 hover:scale-95 transition duration-200"
+                    src="theme-store.png" alt="">
+            </div>
+
+            <p class="text-center text-2xl md:text-3xl text-orange-500 mt-4 font-semibold">
+                @THEME STORE
+            </p>
+
+            <h3 class="text-sm text-yellow-50 text-center mt-3">
+                ipsum dolor,ipsa dolore amet... voluptatem voluptates... snecessitatibus.
+            </h3>
+
+            <div class="mt-5 text-center">
+                <span class="text-lg md:text-2xl text-green-400 hover:underline underline-offset-4">
+                    Check Out ~
+                </span>
+            </div>
+
+        </a>
+
+        <!-- Copy same card for others -->
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="px-2 py-4 md:px-4 md:py-6 bg-slate-900/60">
+
+        <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12">
+
+            <a href="#"><img class="h-7 w-7 md:h-10 md:w-10" src="facebook.png" alt="#"></a>
+
+            <a href="#"><img class="h-6 w-6 md:h-9 md:w-9 " src="instagram.png" alt=""></a>
+
+            <a href="#"><img class="h-6 w-6 md:h-9 md:w-9" src="whatsapp.png" alt=""></a>
+
+            <a href="#"><img class="h-7 w-7 md:h-10 md:w-10" src="twitter-x.webp" alt=""></a>
+
+            <a href="#"><img class="h-7 w-7 md:h-10 md:w-10" src="gmail.webp" alt=""></a>
+
+            <a href="#"><img class="h-6 w-6 md:h-9 md:w-9" src="Google__G__logo.svg.webp" alt=""></a>
+
+        </div>
+
+    </footer>
+
+    <!-- Copyright -->
+    <div class="py-[6px] text-center bg-white text-xs md:text-sm font-semibold">
+        © 2026 FFF Hold. All Rights Reserved.(Disigned by ismail sk)
+    </div>
+
+</body>
+</html>

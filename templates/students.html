@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Student Management</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-slate-100 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-indigo-600 shadow-lg">
+
+        <div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
+
+            <h1 class="text-white text-2xl font-bold">
+                Student Detail View
+            </h1>
+
+            <div class="flex items-center gap-4">
+
+                <!-- Total Student -->
+                <div class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-semibold shadow">
+
+                    Total Student :
+                    {{ students|length }}
+
+                </div>
+
+                <!-- Add Button -->
+                <a
+                    href="{% url 'students_add' %}"
+                    class="bg-white text-indigo-600 px-5 py-2 rounded-lg font-semibold hover:bg-indigo-100 transition"
+                >
+                    Add Student
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Main -->
+    <div class="max-w-7xl mx-auto p-5">
+
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+
+            <div class="overflow-x-auto">
+
+                <table class="w-full text-left">
+
+                    <!-- Table Head -->
+                    <thead class="bg-slate-200">
+
+                        <tr>
+
+                            <th class="p-4">Pic</th>
+                            <th class="p-4">Student ID</th>
+                            <th class="p-4">Name</th>
+                            <th class="p-4">Father Name</th>
+                            <th class="p-4">Class Roll</th>
+                            <th class="p-4">Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <!-- Table Body -->
+                    <tbody>
+
+                        {% for student in students %}
+
+                        <tr class="border-b hover:bg-slate-50 transition">
+
+                            <!-- Picture -->
+                            <td class="p-4">
+
+                                {% if student.picture %}
+
+                                <img
+                                    src="{{ student.picture.url }}"
+                                    alt="{{ student.name }}"
+                                    class="w-14 h-14 rounded-full object-cover border"
+                                >
+
+                                {% else %}
+
+                                <div class="w-14 h-14 rounded-full bg-slate-200"></div>
+
+                                {% endif %}
+
+                            </td>
+
+                            <!-- Student ID -->
+                            <td class="p-4 font-semibold">
+                                {{ student.student_id }}
+                            </td>
+
+                            <!-- Name -->
+                            <td class="p-4">
+                                {{ student.name }}
+                            </td>
+
+                            <!-- Father Name -->
+                            <td class="p-4">
+                                {{ student.father_name }}
+                            </td>
+
+                            <!-- Class Roll -->
+                            <td class="p-4">
+                                {{ student.class_roll }}
+                            </td>
+
+                            <!-- Actions -->
+                            <td class="p-4">
+
+                                <div class="flex gap-2">
+
+                                    <!-- Details -->
+                                    <a
+                                        href="{% url 'student_details' student.id %}"
+                                        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                                    >
+                                        Details
+                                    </a>
+
+                                    <!-- Edit -->
+                                    <a
+                                        href="{% url "student_edit" student.id %}"
+                                        class="bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                                    >
+                                        Edit
+                                    </a>
+
+                                    <!-- Delete -->
+                                    <a
+                                        href="{% url "students_delete" student.id%}"
+                                        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                                    >
+                                        Delete
+                                    </a>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                        {% empty %}
+
+                        <tr>
+
+                            <td
+                                colspan="6"
+                                class="text-center p-10 text-slate-500"
+                            >
+                                No Students Found
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
