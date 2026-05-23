@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Management Dashboard</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{
+    background:#f1f5f9;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.active-tab{
+    color:#2563eb;
+}
+</style>
+
+</head>
+<body class="min-h-screen">
+
+<!-- Header -->
+
+<header class="bg-blue-600 p-4 text-white sticky top-0 z-50 shadow-lg">
+
+<div class="flex justify-between items-center">
+
+<div>
+<h1 class="text-xl font-bold">
+🏫 School Dashboard
+</h1>
+
+<p class="text-sm opacity-80">
+Manage School Easily
+</p>
+</div>
+
+<button class="bg-white text-blue-600 px-3 py-2 rounded-full">
+🔔
+</button>
+
+</div>
+
+</header>
+
+
+<!-- Search -->
+
+<div class="p-4">
+
+<input
+type="text"
+placeholder="Search..."
+class="w-full p-3 rounded-xl border outline-none focus:ring-2 focus:ring-blue-500"
+/>
+
+</div>
+
+
+<!-- Dashboard Grid -->
+
+<a href="{% url 'students_views' %}" <div class="grid grid-cols-2 gap-4 px-4 pb-28">
+
+<div class="card bg-white rounded-2xl p-5 shadow transition duration-300">
+<div class="text-4xl">👨‍🎓</div>
+<h2 class="font-bold mt-3">Students</h2>
+<p class="text-gray-500 text-sm">1250 Students</p>
+</div>
+
+
+<div class="card bg-white rounded-2xl p-5 shadow transition duration-300">
+<div class="text-4xl">👩‍🏫</div>
+<h2 class="font-bold mt-3">Teachers</h2>
+<p class="text-gray-500 text-sm">95 Teachers</p>
+</div>
+
+
+<div class="card bg-white rounded-2xl p-5 shadow transition duration-300">
+<div class="text-4xl">💰</div>
+<h2 class="font-bold mt-3">Fees</h2>
+<p class="text-gray-500 text-sm">Pending Fees</p>
+</div>
+
+
+<div class="card bg-white rounded-2xl p-5 shadow transition duration-300">
+<div class="text-4xl">📝</div>
+<h2 class="font-bold mt-3">Blog</h2>
+<p class="text-gray-500 text-sm">School News</p>
+</div>
+
+
+<div class="card bg-white rounded-2xl p-5 shadow transition duration-300">
+<div class="text-4xl">🪪</div>
+<h2 class="font-bold mt-3">ID Card</h2>
+<p class="text-gray-500 text-sm">Generate Cards</p>
+</div>
+
+
+<div class="card bg-white rounded-2xl p-5 shadow transition duration-300">
+<div class="text-4xl">📊</div>
+<h2 class="font-bold mt-3">Marksheet</h2>
+<p class="text-gray-500 text-sm">Results</p>
+</div>
+
+
+<div class="card bg-white rounded-2xl p-5 shadow transition duration-300">
+<div class="text-4xl">📅</div>
+<h2 class="font-bold mt-3">Attendance</h2>
+<p class="text-gray-500 text-sm">Daily Report</p>
+</div>
+
+
+<div class="card bg-white rounded-2xl p-5 shadow transition duration-300">
+<div class="text-4xl">📚</div>
+<h2 class="font-bold mt-3">Exams</h2>
+<p class="text-gray-500 text-sm">Exam Schedule</p>
+</div>
+
+
+<div class="card bg-white rounded-2xl p-5 shadow transition duration-300 col-span-2">
+<div class="text-4xl">⚙️</div>
+<h2 class="font-bold mt-3">Settings</h2>
+<p class="text-gray-500 text-sm">Dashboard Preferences</p>
+</div>
+
+</div>
+
+
+<!-- Mobile Bottom Navigation -->
+
+<nav class="fixed bottom-0 w-full bg-white shadow-2xl border-t">
+
+<div class="flex justify-around py-3">
+
+<button class="nav-btn active-tab flex flex-col items-center">
+🏠
+<span class="text-xs">Home</span>
+</button>
+
+<button class="nav-btn flex flex-col items-center">
+👨‍🎓
+<span class="text-xs">Students</span>
+</button>
+
+<button class="nav-btn flex flex-col items-center">
+💰
+<span class="text-xs">Fees</span>
+</button>
+
+<button class="nav-btn flex flex-col items-center">
+👩‍🏫
+<span class="text-xs">Teachers</span>
+</button>
+
+<button class="nav-btn flex flex-col items-center">
+⚙️
+<span class="text-xs">Settings</span>
+</button>
+
+</div>
+
+</nav>
+
+
+<script>
+
+const buttons=document.querySelectorAll(".nav-btn");
+
+buttons.forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+buttons.forEach(b=>b.classList.remove("active-tab"));
+
+btn.classList.add("active-tab");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

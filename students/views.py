@@ -4,6 +4,11 @@ from .forms import StudentCreation
 
 # Create your views here.
 
+def dashboard(request):
+    
+    return render(request, "dashboard.html")
+
+
 def students_views(request):
     students = Students.objects.all()
     return render(request, "students.html", {"students":students })
